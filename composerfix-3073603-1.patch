@@ -1,0 +1,19 @@
+diff --git a/composer.json b/composer.json
+index bbb016e..54c8e30 100644
+--- a/composer.json
++++ b/composer.json
+@@ -11,11 +11,10 @@
+     "source": "http://cgit.drupalcode.org/bibcite"
+   },
+   "require": {
+-    "academicpuma/citeproc-php": "~1.0",
++    "academicpuma/citeproc-php": "dev-master",
+     "adci/full-name-parser": "^0.2",
+-    "technosophos/LibRIS": "~2.0",
++    "technosophos/libris": "~2.0",
+     "audiolabs/bibtexparser": "dev-master",
+-    "caseyamcl/php-marc21": "~1.0",
+-    "drupal/entity": "^1.0"
++    "caseyamcl/php-marc21": "~1.0"
+   }
+ }
