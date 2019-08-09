@@ -1,0 +1,32 @@
+diff --git a/vendor/academicpuma/citeproc-php/src/Name.php b/vendor/academicpuma/citeproc-php/src/Name.php
+index 55bdac10..63995cc9 100644
+--- a/vendor/academicpuma/citeproc-php/src/Name.php
++++ b/vendor/academicpuma/citeproc-php/src/Name.php
+@@ -236,14 +236,12 @@ function render($names, $mode = NULL) {
+                 if ($this->form == 'short') {
+                     $text = $ndp . $name->family;
+                 } else {
+-                    switch ($this->{'name-as-sort-order'}) {
+-                        case 'first' && $rank == 0:
+-                        case 'all':
+-                            $text = $ndp . $name->family . $this->sort_separator . $given;
+-                            break;
+-                        default:
+-                            $text = $given . ' ' . $ndp . $name->family . $suffix;
+-                    }
++                  if (($this->{'name-as-sort-order'} == "first" && $rank==0) || $this->{'name-as-sort-order'} == "all") {
++                    $text=$ndp . $name->family . $this->sort_separator . $given;
++                  }
++                  else {
++                    $text=$given . ' ' . $ndp . $name->family . $suffix;
++                  }
+                 }
+                 $authors[] = trim($this->format($text));
+             }
+@@ -392,4 +390,4 @@ function get_utf8_regex() {
+             $print, $punct, $space, $upper, $word, $patternModifiers);
+     }
+ 
+-}
+\ No newline at end of file
++}
